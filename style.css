@@ -1471,21 +1471,45 @@ footer {
 
 
 
+
+
+
+
+
+
+/* ============================
+   TRUE MOBILE VERSION
+   ============================ */
 @media (max-width: 768px) {
 
-  /* GENERAL RESET */
-  .full-screen {
-    height: auto;
-    min-height: 100vh;
-    padding: 20px;
-    flex-direction: column;
+  /* RESET DESKTOP BEHAVIOR */
+  * {
+    box-sizing: border-box;
   }
 
-  /* HEADER */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* SECTIONS */
+  .full-screen {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 20px !important;
+    flex-direction: column !important;
+  }
+
+  /* ================= HEADER ================= */
   header {
+    position: relative;
     flex-direction: column;
     padding: 15px;
     text-align: center;
+  }
+
+  header::before,
+  header::after {
+    display: none;
   }
 
   header h1 {
@@ -1494,32 +1518,39 @@ footer {
   }
 
   nav {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 10px;
   }
 
   nav a {
-    margin: 10px;
-    transform: none;
-    font-size: 16px;
+    margin: 6px 10px;
+    font-size: 14px;
+    transform: none !important;
   }
 
-  /* HOME SECTION */
+  .menu {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* ================= HOME ================= */
   #home {
     text-align: center;
   }
 
   .home-image {
-    position: static;
+    position: static !important;
+    transform: none !important;
     width: 90%;
-    max-width: 350px;
+    max-width: 320px;
     margin: 20px auto;
-    transform: none;
   }
 
   .section-content.home {
-    transform: none;
-    margin-top: 0;
+    transform: none !important;
+    margin: 0;
   }
 
   .section-content.home h1,
@@ -1529,18 +1560,28 @@ footer {
     text-align: center;
   }
 
-  .section-content.home button {
-    margin: 30px auto 0;
+  .section-content.home h2,
+  .section-content.home h3 {
+    font-size: 2.2rem;
+    display: block;
   }
 
-  /* ABOUT SECTION */
+  .section-content.home button {
+    margin: 25px auto;
+  }
+
+  /* ================= ABOUT ================= */
+  #about {
+    padding-top: 40px;
+  }
+
   .about-image,
   .about-image1,
   .about-image2 {
-    position: static;
-    transform: none;
+    position: static !important;
+    transform: none !important;
     width: 70%;
-    max-width: 250px;
+    max-width: 220px;
     margin: 15px auto;
     display: block;
   }
@@ -1550,23 +1591,44 @@ footer {
     padding: 20px;
   }
 
+  .section-contentAbout h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
   .section-contentAbout h2::after {
     width: 100%;
   }
 
   #about .sub-sections-container {
-    grid-template-columns: 1fr;
-    margin-top: 30px;
-    transform: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: none !important;
+    margin-top: 20px;
   }
 
-  /* PORTFOLIO */
+  #about .sub-section {
+    max-height: none;
+  }
+
+  /* ================= PORTFOLIO ================= */
+  #portfolio {
+    padding-top: 40px;
+  }
+
+  .section-contentPortfolio h2 {
+    margin-top: 0;
+    font-size: 2rem;
+  }
+
   .frames {
-    position: static;
+    position: static !important;
     width: 100%;
     margin: 20px auto;
-    padding: 20px;
+    padding: 15px;
     max-height: none;
+    overflow: visible;
   }
 
   .frame {
@@ -1574,31 +1636,56 @@ footer {
     height: auto;
   }
 
-  /* SERVICES */
+  .frames::after {
+    width: 100%;
+  }
+
+  .frames .characters h3,
+  .frames .characters h4,
+  .frames .characters h5,
+  .frames .characters h6 {
+    font-size: 1.4rem;
+  }
+
+  /* ================= SERVICES ================= */
+  .section-contentServices h2 {
+    font-size: 1.6rem;
+  }
+
   .section-contentServices ul {
     font-size: 1rem;
     padding: 20px;
   }
 
-  /* PRODUCTS */
+  .section-contentServices ul p {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+
+  /* ================= PRODUCTS ================= */
+  .section-contentProducts h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
   .models {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .model-card img {
     height: auto;
   }
 
-  /* CONTACT */
+  /* ================= CONTACT ================= */
   .section-contentContact h2 {
-    transform: none;
+    transform: none !important;
     margin-top: 20px;
     text-align: center;
   }
 
   .sub-sections-contactcontainer {
-    margin: 30px auto;
-    padding: 30px;
+    margin: 20px auto;
+    padding: 20px;
     max-width: 100%;
   }
 
@@ -1607,9 +1694,19 @@ footer {
     max-width: 100%;
   }
 
-  /* CUSTOM CURSOR OFF ON MOBILE */
+  input,
+  textarea {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* ================= FOOTER ================= */
+  footer {
+    font-size: 0.9rem;
+  }
+
+  /* ================= DISABLE DESKTOP CURSOR ================= */
   .cursor {
     display: none;
   }
 }
-
