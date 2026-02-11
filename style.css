@@ -1,6 +1,12 @@
+
+
 /* =======================
    GLOBAL STYLES
-   ======================= */
+======================= */
+* {
+    box-sizing: border-box; /* Prevents sizing issues across browsers */
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,31 +15,30 @@ body {
 
 /* =======================
    HEADER BACKGROUND & POSITION
-   ======================= */
+======================= */
 header {
-    
     background: linear-gradient(to bottom,#000000,#335966);
-    position: sticky;          /* Stays at top */
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 10px 40px;       /* Header padding */
+    padding: 10px 40px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space between logo and nav */
+    justify-content: space-between;
 }
+
+
 /* Top thin line */
 header::before {
     content: "";
     position: absolute;
-    top: 67px;          /* distance from top */
+    top: 67px;
     left: 0;
     width: 100%;
-    height: 1.8px;       /* thickness */
-   background: linear-gradient(to left,  transparent,#00eeff,#ffffff, #00eeff, transparent);
-
-
+    height: 1.8px;
+    background: linear-gradient(to left, transparent,#00eeff,#ffffff,#00eeff,transparent);
     z-index: 5;
 }
 
@@ -41,12 +46,11 @@ header::before {
 header::after {
     content: "";
     position: absolute;
-    top: 70px;         /* distance from top */
+    top: 70px;
     left: 0;
     width: 100%;
-    height: 5px;       /* thickness */
-    background: linear-gradient(to left, transparent,#00eeff,#ffffff, #00eeff, transparent);
-
+    height: 5px;
+    background: linear-gradient(to left, transparent,#00eeff,#ffffff,#00eeff,transparent);
     z-index: 5;
 }
 
@@ -69,14 +73,12 @@ header::after {
 
 /* =======================
    HEADER TEXT
-   ======================= */
+======================= */
 header h1 {
     color: #ffffff;
     font-size: 3rem;
-    text-align: left;
     margin: 0;
     margin-left: 5%;
-    /* Optional glow */
     text-shadow:
         0 0 5px #00eeff,
         0 0 15px #00eeff,
@@ -85,7 +87,7 @@ header h1 {
 
 /* =======================
    NAVIGATION LINKS
-   ======================= */
+======================= */
 nav {
     display: flex;
     align-items: center;
@@ -97,22 +99,17 @@ nav a {
     font-size: 20px;
     text-decoration: none;
     transition: text-shadow 0.3s;
-    font-weight: bold; 
-    margin-top:1%; 
-    margin-left: 20px; 
-    margin-right: 50px; 
-
-    transform: translateX(-190px); /* moves link 20px to the right */
+    margin-top: 1%;
+    margin-left: 20px;
+    margin-right: 50px;
 }
 
-/* Hover glow for links */
 nav a:hover {
     text-shadow:
         0 0 5px #00eeff,
         0 0 15px #00eeff,
         0 0 30px #00eeff;
 }
-
 /* =======================
    HEADER IMAGE
    ======================= */
@@ -138,16 +135,14 @@ nav a:hover {
    FULL SCREEN SECTIONS
    ======================= */
 .full-screen {
-   
-    
-
-  height: 89vh;                 /*Full screen height */
-    display: flex;                  /* Flexbox layout */
-    justify-content: center;        /* Horizontal center */;
+    height: 89vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(to bottom, #00eeff, #000000);
     padding: 40px;
-    color: white;                   /* Text color */
-    text-align: center; 
+    color: white;
+    text-align: center;
 }
 #home {
     position: relative;
@@ -156,13 +151,16 @@ nav a:hover {
 }
 
 
-.section-content.home{
-    justify-content: center;   
-    align-items: center;
-    transform: translateX(-50%);
+/* Section content */
+.section-content.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     margin-top: 5%;
-
+    transform: translateX(0); /* Fixed Edge/Chrome difference */
 }
+
 /* Section content inside home */
 
 .section-content.home h1{
@@ -195,23 +193,21 @@ nav a:hover {
 
 .section-content.home h2,
 .section-content.home h3 {
-    display: inline;
+    display: inline-block; /* Fixed Chrome/Edge inline differences */
 }
 
 
 
 /* Paragraph styling */
+
 .section-content.home p {
-    font-weight: normal;
     font-size: 1rem;
-    margin: 0px 0 0 0; /* better spacing */
-    text-align: left;
     color: #ffffff;
-    max-width: 500px; /* optional: keeps text from going too wide */
+    max-width: 500px;
+    margin: 0 0 10px 0;
 }
-.section-content.home p:last-of-type{
-    color: #49D3DE; /* sci-fi accent color */
-    text-align: left;
+.section-content.home p:last-of-type {
+    color: #49D3DE;
     font-weight: bold;
     text-shadow: 0 0 10px #49D3DE, 0 0 20px #49D3DE;
 }
@@ -237,29 +233,27 @@ nav a:hover {
 }
 
 
+/* Button */
 .section-content.home button {
-    
-    
-
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 12px 25px;
     background: #00eeff;
-    -webkit-text-fill-color: #000000;
+    color: #000000; /* unified color */
     border: none;
-    margin-left: -45%;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
-.section-content.home button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px #00eeff, 0 0 30px #00eeff;
 
-     transform: translateY(-3px);
-    -webkit-text-fill-color: #000000;
+
+.section-content.home button:hover {
     background: #fefefe;
+    color: #000000;
     box-shadow: 0 0 15px #00eeff, 0 0 30px #00eeff;
+    transform: translateY(-3px);
 }
+
 .menu {
     width: 100%; /* ← missing % sign before */
     margin-left: 30%;
@@ -669,40 +663,67 @@ nav a:hover {
 
 
 .frames {
-    position: absolute;
-    left: 3%;
-    margin-top: 8%;
-
-    
-    width: 94%;                 
-    
-    justify-content: center;  
-
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 94%;
+    margin: 8% auto 0;
     border: 1px solid rgba(0,238,255,0.4);
     border-radius: 20px;
-
-
-
-
-    display: flex;
-    flex-wrap: wrap;          
-    gap: 20px;
-
     box-shadow: 0 0 20px rgba(0,238,255,0.3);
-
     max-height: 73%;
     overflow-y: auto;
-
-    white-space: normal;
-   
-    overflow-wrap: break-word;
-    word-break: break-word;
-
-    line-height: 1.5;
-    padding: 40px;
-    box-sizing: border-box;
-
 }
+
+.frame {
+    width: 410px;
+    height: 231px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,238,255,0.4);
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.frame:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 238, 255, 0.9);
+    filter: brightness(1.15);
+}
+
+
+
+/* =======================
+   CUSTOM SCROLLBARS (Chrome/Edge & Firefox)
+======================= */
+.frames::-webkit-scrollbar {
+    width: 10px;
+}
+
+.frames::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.frames::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00eeff, #007a85);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,238,255,0.8);
+}
+
+.frames::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #66ffff, #00eeff);
+}
+
+/* Firefox */
+.frames {
+    scrollbar-width: thin;
+    scrollbar-color: #00eeff rgba(0,0,0,0.5);
+}
+
+
 
 /* ===== Scrollbar Color =====*/
  .frames::-webkit-scrollbar {
