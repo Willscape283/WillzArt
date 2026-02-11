@@ -138,7 +138,10 @@ nav a:hover {
    FULL SCREEN SECTIONS
    ======================= */
 .full-screen {
-    height: 89vh;                 /* Full screen height */
+   
+     min-height: 100vh;
+
+   /* height: 89vh;                 Full screen height */
     display: flex;                  /* Flexbox layout */
     justify-content: center;        /* Horizontal center */;
     background: linear-gradient(to bottom, #00eeff, #000000);
@@ -1456,3 +1459,157 @@ footer {
         0 0 80px #00fff2,
         inset 0 0 30px rgba(0, 255, 255, 0.9);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+  /* GENERAL RESET */
+  .full-screen {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  /* HEADER */
+  header {
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 10px;
+    transform: none;
+    font-size: 16px;
+  }
+
+  /* HOME SECTION */
+  #home {
+    text-align: center;
+  }
+
+  .home-image {
+    position: static;
+    width: 90%;
+    max-width: 350px;
+    margin: 20px auto;
+    transform: none;
+  }
+
+  .section-content.home {
+    transform: none;
+    margin-top: 0;
+  }
+
+  .section-content.home h1,
+  .section-content.home h2,
+  .section-content.home h3,
+  .section-content.home p {
+    text-align: center;
+  }
+
+  .section-content.home button {
+    margin: 30px auto 0;
+  }
+
+  /* ABOUT SECTION */
+  .about-image,
+  .about-image1,
+  .about-image2 {
+    position: static;
+    transform: none;
+    width: 70%;
+    max-width: 250px;
+    margin: 15px auto;
+    display: block;
+  }
+
+  .section-contentAbout {
+    margin: 0;
+    padding: 20px;
+  }
+
+  .section-contentAbout h2::after {
+    width: 100%;
+  }
+
+  #about .sub-sections-container {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+    transform: none;
+  }
+
+  /* PORTFOLIO */
+  .frames {
+    position: static;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    max-height: none;
+  }
+
+  .frame {
+    width: 100%;
+    height: auto;
+  }
+
+  /* SERVICES */
+  .section-contentServices ul {
+    font-size: 1rem;
+    padding: 20px;
+  }
+
+  /* PRODUCTS */
+  .models {
+    margin-top: 30px;
+  }
+
+  .model-card img {
+    height: auto;
+  }
+
+  /* CONTACT */
+  .section-contentContact h2 {
+    transform: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .sub-sections-contactcontainer {
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 100%;
+  }
+
+  form {
+    margin-top: 0;
+    max-width: 100%;
+  }
+
+  /* CUSTOM CURSOR OFF ON MOBILE */
+  .cursor {
+    display: none;
+  }
+}
+
