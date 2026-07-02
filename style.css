@@ -1005,6 +1005,16 @@ video::-webkit-media-controls-enclosure {
     margin-left: 10%;
 }
 
+
+/* =======================
+   RESPONSIVE FIX
+   ======================= */
+/* ==========================================================================
+   DESKTOP DEFAULT STYLES 
+   This matches "Screenshot 2026-07-02 094342.jpg".
+   This block runs automatically on PCs, and triggers on mobile devices 
+   WHEN they check the "Desktop Site" option.
+   ========================================================================== */
 @media (min-width: 769px) {
     .menu-btn {
         display: none !important; /* Forces the 3 lines to disappear completely on desktop mode */
@@ -1013,11 +1023,14 @@ video::-webkit-media-controls-enclosure {
         cursor: pointer;
         text-shadow: 0 0 10px #00eeff;
     }
+    
+    /* Your flat, side-by-side desktop rules sit beautifully up here */
 }
-/* =======================
-   RESPONSIVE FIX
-   ======================= */
-@media (max-width: 1200px) {
+
+/* ==========================================================================
+   RESPONSIVE TABLET FIX
+   ========================================================================== */
+@media (max-width: 1200px) and (min-width: 769px) {
     .about-image {
         position: static;
         transform: none;
@@ -1035,6 +1048,12 @@ video::-webkit-media-controls-enclosure {
     }
 }
 
+/* ==========================================================================
+   MOBILE ONLY OVERRIDES
+   This matches "8412c18a-f66e-4ddc-8e2f-d5a5e4b1076b_2.jpg".
+   This block ONLY runs on standard mobile viewports. If "Desktop Site" 
+   is selected on a phone, this entire block is ignored.
+   ========================================================================== */
 @media (max-width: 768px) {
     /* =======================
        GLOBAL MOBILE LAYOUT
@@ -1069,7 +1088,7 @@ video::-webkit-media-controls-enclosure {
     }
 
     .menu-btn {
-        display: block !important;
+        display: block !important; /* Shows 3 lines exclusively on mobile viewport layout */
         font-size: 32px !important;
         color: #ffffff !important;
         cursor: pointer !important;
@@ -1421,19 +1440,6 @@ video::-webkit-media-controls-enclosure {
 
     .contact-apps {
         margin-top: 30px !important;
-    }
-}
-
-/* ==========================================================================
-   DESKTOP ONLY RULES (FIXED FROM CAUSE OF ERROR)
-   ========================================================================== */
-@media (min-width: 769px) {
-    .menu-btn {
-        display: none; /* Safely hides the 3 lines only on PC layouts */
-        color: #ffffff;
-        font-size: 30px;
-        cursor: pointer;
-        text-shadow: 0 0 10px #00eeff;
     }
 }
 
