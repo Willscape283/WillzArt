@@ -1038,18 +1038,15 @@ video::-webkit-media-controls-enclosure {
     }*/
     .home-image {
         position: relative !important; /* Disables absolute positioning so it breaks out of the desktop coordinates */
-        top: 0 !important;
+        top: -25px !important;       /* FORCED CORRECTION: Adjust this value (e.g., -35px) to slide the image up higher */
         right: 0 !important;
-        transform: none !important; /* Removes desktop vertical translation tilt */
+        transform: none !important;    /* Removes desktop vertical translation tilt */
         
         /* AUTO RESIZE CAPABILITIES */
-        width: 100% !important; /* Takes up full available width of mobile layout container */
-        max-width: 280px !important; /* Soft limit cap to keep it matching portrait proportions beautifully */
-        height: auto !important; /* Maintains layout visual aspect ratio */
-        
-        /* ALIGNMENT CORRECTIONS */
-        margin: 0 auto !important; /* Centers the graphic smoothly in mobile columns */
-        margin-top: -50px !important; /* Pulls the image up a little bit on mobile viewports */
+        width: 100% !important;        /* Takes up full available width of mobile layout container */
+        max-width: 280px !important;   /* Soft limit cap to keep it matching portrait proportions beautifully */
+        height: auto !important;       /* Maintains layout visual aspect ratio */
+        margin: 0 auto !important;     /* Centers the graphic smoothly in mobile columns */
     }
 }
 @media (max-width: 1200px) {
