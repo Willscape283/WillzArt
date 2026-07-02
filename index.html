@@ -16,28 +16,53 @@
 <body>
    
 
-    <!-- =======================
-         HEADER / NAVIGATION
-         ======================= -->
-    <header>
-        <h1>WillzArt</h1>
+  
        
+   <header>
+    <h1 class="logo">WillzArt</h1>
 
-        <!-- Navigation links -->
-         <div class="menu">
-          <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#services">Services</a>
-            <a href="#products">Products</a>
-            <a href="#contact">Contact</a> 
-        </nav>
-         </div>
-         
+    <!-- Hamburger icon for mobile -->
+    <div class="menu-btn" id="menuBtn">☰</div>
+
+    <!-- Sidebar Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="menu-header">
+            <span class="menu-title">MENU</span>
+            
+        </div>
+        <hr class="menu-divider">
         
-    </header>
-    
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+        
+        
+    </nav>
+</header> 
+   
+    <!-- ======================= <header>
+
+    <h1 class="logo">WillzArt</h1>
+
+    <nav class="navbar">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <div class="menu-btn">
+        ☰
+    </div>
+
+</header>======================= -->
 
   <!-- =======================
      HOME SECTION
@@ -51,10 +76,9 @@
         <h3>William</h3>
         <p>Ready to help with your project at a fair price.</p>
         <p>Come on, let’s work together!</p>
-       <a href="Resume/Updated_Resume.pdf" download class="resume-btn">
+        <a href="assets/Updated Resume.pdf" download class="resume-btn">
     <button>Download my Resume</button>
 </a>
-
     </div>
 </section>
     
@@ -67,7 +91,7 @@
   
         <img src="About.png" alt="William 3D Artist" class="about-image">
        
-        <img src="Barong.png" alt="William 3D Artist" class="about-image2">
+        <img src="barong.png" alt="William 3D Artist" class="about-image2">
          <img src="Toga.png" alt="William 3D Artist" class="about-image1">
         <div class="section-contentAbout">
             <h2>Hello!!!</h2>
@@ -278,36 +302,16 @@
 
             <div class="sub-sections-contactcontainer">
                 <!-- Contact form -->
-                <form action="https://formspree.io/f/xnjbnyev" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
+                <form
+                    action="mailto:octivawilliamjr28@gmail.com"
+                    method="POST"
+                    enctype="text/plain"
+                >
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send</button>
                 </form>
-
-         
-                <script>
-                const form = document.querySelector("form");
-                form.addEventListener("submit", async (e) => {
-                    e.preventDefault();
-                    const data = new FormData(form);
-                    const response = await fetch(form.action, {
-                        method: form.method,
-                        body: data,
-                        headers: { 'Accept': 'application/json' }
-                    });
-                    if (response.ok) {
-                        alert("✅ Message sent successfully!");
-                        form.reset();
-                    } else {
-                        alert("❌ Failed to send message. Please try again.");
-                    }
-                });
-                </script>
-
-
-
-
 
 
 
