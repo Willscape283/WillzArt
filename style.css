@@ -1032,7 +1032,7 @@ video::-webkit-media-controls-enclosure {
         transform: none !important; 
         
       
-        width: 100% !important; 
+        width: 0% !important; 
         max-width: 280px !important; 
         height: auto !important; 
         margin: 0 auto !important; 
