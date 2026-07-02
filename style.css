@@ -118,7 +118,7 @@ nav a:hover {
    ======================= */
 
 .home-image {
-    position: absolute;
+   /* position: absolute;
     right: 70px;
     top: 40%;
     transform: translateY(-51.6%);
@@ -126,12 +126,27 @@ nav a:hover {
     height: auto;
     border-radius: 20px;
     z-index: 200; /* stays below header */
+    /* SHAPE GLOW (for transparent PNG) 
+    filter:
+        drop-shadow(0 0 10px rgba(0, 238, 255, 0.6))
+        drop-shadow(0 0 25px rgba(0, 238, 255, 0.5))
+        drop-shadow(0 0 50px rgba(0, 238, 255, 0.4));*/
+
+    position: absolute; /* Ensures coordinates work correctly on desktop */
+    right: 70px;
+    top: 40%;
+    transform: translateY(-51.6%);
+    width: 700px;
+    height: auto;
+    border-radius: 20px;
+    z-index: 200; /* stays below header */
+    
     /* SHAPE GLOW (for transparent PNG) */
     filter:
         drop-shadow(0 0 10px rgba(0, 238, 255, 0.6))
         drop-shadow(0 0 25px rgba(0, 238, 255, 0.5))
         drop-shadow(0 0 50px rgba(0, 238, 255, 0.4));
-    
+
 }
 
 /* =======================
@@ -1008,6 +1023,21 @@ video::-webkit-media-controls-enclosure {
 /* =======================
    RESPONSIVE FIX
    ======================= */
+
+   @media (max-width: 768px) {
+    .home-image {
+        position: relative !important; /* Disables absolute positioning so it breaks out of the desktop coordinates */
+        top: 0 !important;
+        right: 0 !important;
+        transform: none !important; /* Removes desktop vertical translation tilt */
+        
+        /* AUTO RESIZE CAPABILITIES */
+        width: 100% !important; /* Takes up full available width of mobile layout container */
+        max-width: 280px !important; /* Soft limit cap to keep it matching portrait proportions beautifully */
+        height: auto !important; /* Maintains layout visual aspect ratio */
+        margin: 0 auto !important; /* Centers the graphic smoothly in mobile columns */
+    }
+}
 @media (max-width: 1200px) {
     .about-image {
         position: static;
