@@ -492,26 +492,7 @@ nav a:hover {
     margin-left: 10%;
 }
 
-/* =======================
-   RESPONSIVE FIX
-   ======================= */
-@media (max-width: 1200px) {
-    .about-image {
-        position: static;
-        transform: none;
-        margin: 0 auto 40px;
-        display: block;
-        width: 320px;
-    }
 
-    .section-contentAbout {
-        margin-left: 0;
-    }
-
-    #about .sub-sections-container {
-        grid-template-columns: 1fr;
-    }
-}
 /* =======================
    Portfolio List
    ======================= */
@@ -1023,7 +1004,6 @@ video::-webkit-media-controls-enclosure {
     text-align: left;
     margin-left: 10%;
 }
-
 /* =======================
    RESPONSIVE FIX
    ======================= */
@@ -1052,7 +1032,7 @@ video::-webkit-media-controls-enclosure {
     .full-screen {
         height: auto !important;
         min-height: 100vh;
-        padding: 60px 20px 40px 20px !important; /* Balanced uniform breathing room */
+        padding: 60px 20px 40px 20px !important; 
         box-sizing: border-box;
         display: flex !important;
         flex-direction: column !important;
@@ -1075,7 +1055,7 @@ video::-webkit-media-controls-enclosure {
     }
 
     header::before, header::after {
-        top: 100%; /* Keeps decorative line tightly attached under the header bar */
+        top: 100%; 
     }
 
     .menu-btn {
@@ -1139,28 +1119,16 @@ video::-webkit-media-controls-enclosure {
         background: rgba(255, 255, 255, 0.1);
         margin-bottom: 30px;
     }
-     .navbar span {
-        font-family: Arial, sans-serif;
-        color: #ffffff;
-        font-size: 22px;
-        text-shadow:
-        0 0 5px #00eeff,
-        0 0 15px #00eeff,
-        0 0 30px #00eeff;
-        
-     }
-
 
     .navbar a {
         transform: none !important;
         margin: 0 0 20px 0 !important;
         font-size: 22px;
-        font-family: Arial, sans-serif;
-        color: #ffffff;
+        font-family: 'Times New Roman', Times, serif;
+        color: #e0e0e0;
         font-weight: normal;
         text-align: left;
         width: 100%;
-        
     }
 
     .letstalk-btn {
@@ -1174,7 +1142,7 @@ video::-webkit-media-controls-enclosure {
         font-family: Arial, sans-serif !important;
         font-size: 14px !important;
         letter-spacing: 1.5px;
-        margin-top: auto !important; /* Pushes button safely down to drawer bottom */
+        margin-top: auto !important; 
         font-weight: bold;
     }
 
@@ -1182,7 +1150,7 @@ video::-webkit-media-controls-enclosure {
        HOME SECTION
        ======================= */
     #home {
-        flex-direction: column-reverse !important; /* Stack: text content on top, image underneath */
+        flex-direction: column-reverse !important; 
         gap: 30px;
     }
 
@@ -1192,7 +1160,7 @@ video::-webkit-media-controls-enclosure {
         right: 0 !important;
         transform: none !important;
         width: 100% !important;
-        max-width: 280px !important; /* Balanced portrait visual scale */
+        max-width: 280px !important; 
         margin: 0 auto !important;
     }
 
@@ -1251,7 +1219,7 @@ video::-webkit-media-controls-enclosure {
     }
 
     .about-image1, .about-image2 {
-        display: none !important; /* Keeps the view clean and clutter-free on tiny device screens */
+        display: none !important; 
     }
 
     .section-contentAbout {
@@ -1273,11 +1241,11 @@ video::-webkit-media-controls-enclosure {
 
     .section-contentAbout p {
         font-size: 0.95rem !important;
-        text-align: justify !important; /* Cleaner edge alignment for bulk text */
+        text-align: justify !important; 
     }
 
     #about .sub-sections-container {
-        grid-template-columns: 1fr !important; /* Balanced layout grid stack */
+        grid-template-columns: 1fr !important; 
         gap: 15px !important;
         margin-top: 25px !important;
         transform: none !important;
@@ -1312,7 +1280,7 @@ video::-webkit-media-controls-enclosure {
         left: 0 !important;
         margin-top: 0 !important;
         width: 100% !important;
-        max-height: none !important; /* Eliminates internal nested scrolling boxes */
+        max-height: none !important; 
         padding: 0 !important;
         border: none !important;
         box-shadow: none !important;
@@ -1338,7 +1306,7 @@ video::-webkit-media-controls-enclosure {
 
     .frame {
         width: 100% !important;
-        max-width: 340px !important; /* Beautifully balanced video/image frames */
+        max-width: 340px !important; 
         height: auto !important;
         aspect-ratio: 16/9 !important;
         margin: 0 auto;
@@ -1372,7 +1340,7 @@ video::-webkit-media-controls-enclosure {
     #services .section-contentServices ul p {
         font-size: 1.05rem !important;
         margin-left: 0 !important;
-        text-align: center !important; /* Balanced list alignment */
+        text-align: center !important; 
         margin-bottom: 12px !important;
     }
 
@@ -1398,7 +1366,7 @@ video::-webkit-media-controls-enclosure {
 
     .model-card {
         width: 100%;
-        max-width: 280px; /* Aligns visually with portfolio items */
+        max-width: 280px; 
         margin: 0 auto;
     }
 
@@ -1438,7 +1406,7 @@ video::-webkit-media-controls-enclosure {
     input, textarea {
         width: 100% !important;
         box-sizing: border-box;
-        font-size: 16px !important; /* Prevents iOS/Android zooming on focus */
+        font-size: 16px !important; 
     }
 
     .contact-apps {
@@ -1446,15 +1414,17 @@ video::-webkit-media-controls-enclosure {
     }
 }
 
-/* =======================
-   DESKTOP DEFAULT STYLES 
-   ======================= */
-.menu-btn {
-    display: none; /* Hides the 3 lines by default on PC, Laptop, and large displays */
-    color: #ffffff;
-    font-size: 30px;
-    cursor: pointer;
-    text-shadow: 0 0 10px #00eeff;
+/* ==========================================================================
+   DESKTOP ONLY RULES (FIXED FROM CAUSE OF ERROR)
+   ========================================================================== */
+@media (min-width: 769px) {
+    .menu-btn {
+        display: none; /* Safely hides the 3 lines only on PC layouts */
+        color: #ffffff;
+        font-size: 30px;
+        cursor: pointer;
+        text-shadow: 0 0 10px #00eeff;
+    }
 }
 
 /*===============================================================================================================*/
