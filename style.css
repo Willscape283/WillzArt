@@ -1024,8 +1024,8 @@ video::-webkit-media-controls-enclosure {
    RESPONSIVE FIX
    ======================= */
 
-   @media (max-width: 768px) {
-    /*.home-image {
+   @media (max-width: 800px) {
+    .home-image {
         position: relative !important; 
         right: 0 !important;
         transform: none !important; 
@@ -1035,19 +1035,8 @@ video::-webkit-media-controls-enclosure {
         max-width: 280px !important; 
         height: auto !important; 
         margin: 0 auto !important; 
-    }*/
-    .home-image {
-        position: relative !important; /* Disables absolute positioning so it breaks out of the desktop coordinates */
-        top: -25px !important;       /* FORCED CORRECTION: Adjust this value (e.g., -35px) to slide the image up higher */
-        right: 0 !important;
-        transform: none !important;    /* Removes desktop vertical translation tilt */
-        
-        /* AUTO RESIZE CAPABILITIES */
-        width: 100% !important;        /* Takes up full available width of mobile layout container */
-        max-width: 280px !important;   /* Soft limit cap to keep it matching portrait proportions beautifully */
-        height: auto !important;       /* Maintains layout visual aspect ratio */
-        margin: 0 auto !important;     /* Centers the graphic smoothly in mobile columns */
     }
+    
 }
 @media (max-width: 1200px) {
     .about-image {
