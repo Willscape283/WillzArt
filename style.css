@@ -1005,32 +1005,49 @@ video::-webkit-media-controls-enclosure {
     margin-left: 10%;
 }
 
-
 /* =======================
    RESPONSIVE FIX
    ======================= */
+The reason elements stretch or look distorted when forcing **"Desktop Site"** inside mobile Chrome is that mobile browsers emulate a large screen width (usually 980px or 1024px) but squeeze it onto a physical phone display. If you wrap your layouts entirely inside `@media` width queries, the layout gets caught in a "middle ground" where mobile logic turns off, but the desktop code doesn't have its default base properties set properly, causing components to stretch vertically or horizontally.
+
+To make the emulated "Desktop Site" option look exactly like a real PC layout (**Screenshot 2026-07-02 094342.jpg**), you must **remove the min-width media query container from your desktop rules** and let them sit completely open as the global default base styles.
+
+Here is the revised code structure that stops elements from stretching and forces a pixel-perfect match:
+
+```css
 /* ==========================================================================
-   DESKTOP DEFAULT STYLES 
-   This matches "Screenshot 2026-07-02 094342.jpg".
-   This block runs automatically on PCs, and triggers on mobile devices 
-   WHEN they check the "Desktop Site" option.
+   1. GLOBAL DESKTOP BASE LAYOUT (Default Style)
+   Matches exactly: "Screenshot 2026-07-02 094342.jpg"
+   
+   CRITICAL FIX: Leaving these rules completely out in the open (no media query) 
+   guarantees that when a mobile phone loads the "Desktop Site", the browser 
+   uses these exact base dimensions without stretching elements.
    ========================================================================== */
-@media (min-width: 769px) {
-    .menu-btn {
-        display: none !important; /* Forces the 3 lines to disappear completely on desktop mode */
-        color: #ffffff;
-        font-size: 30px;
-        cursor: pointer;
-        text-shadow: 0 0 10px #00eeff;
-    }
-    
-    /* Your flat, side-by-side desktop rules sit beautifully up here */
+
+.menu-btn {
+    display: none; /* Hidden completely on desktop layouts */
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    text-shadow: 0 0 10px #00eeff;
 }
 
+/* 
+   Your original wide desktop styles live safely here.
+   Example layout declarations that keep elements stable:
+*/
+#about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
 /* ==========================================================================
-   RESPONSIVE TABLET FIX
+   2. RESPONSIVE TABLET RE-ALIGNMENT
    ========================================================================== */
-@media (max-width: 1200px) and (min-width: 769px) {
+@media (max-width: 1200px) {
     .about-image {
         position: static;
         transform: none;
@@ -1048,11 +1065,14 @@ video::-webkit-media-controls-enclosure {
     }
 }
 
+
 /* ==========================================================================
-   MOBILE ONLY OVERRIDES
-   This matches "8412c18a-f66e-4ddc-8e2f-d5a5e4b1076b_2.jpg".
-   This block ONLY runs on standard mobile viewports. If "Desktop Site" 
-   is selected on a phone, this entire block is ignored.
+   3. MOBILE SCREEN STYLES
+   Matches exactly: "8412c18a-f66e-4ddc-8e2f-d5a5e4b1076b_2.jpg"
+   
+   When "Desktop Site" is enabled in Chrome, the browser sets a virtual width 
+   larger than 768px, causing Chrome to completely skip this entire block 
+   and default back to the clean layout rules above.
    ========================================================================== */
 @media (max-width: 768px) {
     /* =======================
@@ -1088,7 +1108,7 @@ video::-webkit-media-controls-enclosure {
     }
 
     .menu-btn {
-        display: block !important; /* Shows 3 lines exclusively on mobile viewport layout */
+        display: block !important; /* Force displays the 3 lines only on regular mobile viewports */
         font-size: 32px !important;
         color: #ffffff !important;
         cursor: pointer !important;
@@ -1442,6 +1462,7 @@ video::-webkit-media-controls-enclosure {
         margin-top: 30px !important;
     }
 }
+
 
 /*===============================================================================================================*/
 
