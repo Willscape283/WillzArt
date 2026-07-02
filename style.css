@@ -1054,7 +1054,7 @@ video::-webkit-media-controls-enclosure {
         right: 0 !important;
         transform: none !important;
         width: 100% !important;
-        max-width: 240px !important; /* Slightly smaller to leave more room for text below */
+        max-width: 360px !important; /* Slightly smaller to leave more room for text below */
         margin: 0 auto !important; /* Centers it horizontally */
     }
 
