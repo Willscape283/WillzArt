@@ -1024,8 +1024,8 @@ video::-webkit-media-controls-enclosure {
    RESPONSIVE FIX
    ======================= */
 
-   @media (max-width: 800px) {
-    .home-image {
+   @media (max-width: 768px) {
+    /*.home-image {
         position: relative !important; 
         right: 0 !important;
         transform: none !important; 
@@ -1035,7 +1035,23 @@ video::-webkit-media-controls-enclosure {
         max-width: 280px !important; 
         height: auto !important; 
         margin: 0 auto !important; 
-    }
+    }*/
+    #home {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.home-image {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+}
     
 }
 @media (max-width: 1200px) {
