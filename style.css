@@ -1027,7 +1027,7 @@ video::-webkit-media-controls-enclosure {
    @media (max-width: 768px) {
     .home-image {
         position: relative !important; /* Disables absolute positioning so it breaks out of the desktop coordinates */
-        top: 0 !important;
+        top: 10 !important;
         right: 0 !important;
         transform: none !important; /* Removes desktop vertical translation tilt */
         
