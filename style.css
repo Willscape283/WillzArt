@@ -1045,7 +1045,7 @@ video::-webkit-media-controls-enclosure {
         flex-direction: column !important; /* Changed from column-reverse to put image on top */
         justify-content: flex-start !important; /* Starts content immediately from the top */
         gap: 15px !important; /* Tightens up the empty gap space */
-        padding-top: 10px !important; /* Reduces top padding so image sits high up near the header */
+        padding-top: 100px !important; /* Reduces top padding so image sits high up near the header */
     }
 
     .home-image {
