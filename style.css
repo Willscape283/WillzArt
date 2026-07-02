@@ -1049,7 +1049,7 @@ video::-webkit-media-controls-enclosure {
         
         /* ALIGNMENT CORRECTIONS */
         margin: 0 auto !important; /* Centers the graphic smoothly in mobile columns */
-        margin-top: -20px !important; /* Pulls the image up a little bit on mobile viewports */
+        margin-top: -50px !important; /* Pulls the image up a little bit on mobile viewports */
     }
 }
 @media (max-width: 1200px) {
