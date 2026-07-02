@@ -1025,9 +1025,20 @@ video::-webkit-media-controls-enclosure {
    ======================= */
 
    @media (max-width: 768px) {
+    /*.home-image {
+        position: relative !important; 
+        right: 0 !important;
+        transform: none !important; 
+        
+      
+        width: 100% !important; 
+        max-width: 280px !important; 
+        height: auto !important; 
+        margin: 0 auto !important; 
+    }*/
     .home-image {
         position: relative !important; /* Disables absolute positioning so it breaks out of the desktop coordinates */
-        top: 10 !important;
+        top: 0 !important;
         right: 0 !important;
         transform: none !important; /* Removes desktop vertical translation tilt */
         
@@ -1035,7 +1046,10 @@ video::-webkit-media-controls-enclosure {
         width: 100% !important; /* Takes up full available width of mobile layout container */
         max-width: 280px !important; /* Soft limit cap to keep it matching portrait proportions beautifully */
         height: auto !important; /* Maintains layout visual aspect ratio */
+        
+        /* ALIGNMENT CORRECTIONS */
         margin: 0 auto !important; /* Centers the graphic smoothly in mobile columns */
+        margin-top: -20px !important; /* Pulls the image up a little bit on mobile viewports */
     }
 }
 @media (max-width: 1200px) {
