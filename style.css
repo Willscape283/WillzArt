@@ -1004,6 +1004,16 @@ video::-webkit-media-controls-enclosure {
     text-align: left;
     margin-left: 10%;
 }
+
+@media (min-width: 769px) {
+    .menu-btn {
+        display: none !important; /* Forces the 3 lines to disappear completely on desktop mode */
+        color: #ffffff;
+        font-size: 30px;
+        cursor: pointer;
+        text-shadow: 0 0 10px #00eeff;
+    }
+}
 /* =======================
    RESPONSIVE FIX
    ======================= */
