@@ -1024,18 +1024,7 @@ video::-webkit-media-controls-enclosure {
    RESPONSIVE FIX
    ======================= */
 
-   /*@media (max-width: 768px) {
-    .home-image {
-        position: relative !important; 
-        right: 0 !important;
-        transform: none !important; 
-        
-      
-        width: 100% !important; 
-        max-width: 360px !important; 
-        height: auto !important; 
-        margin: 0 auto !important; 
-    }*/
+
 @media (max-width: 768px) {
     /* =======================
        HOME SECTION MOBILE
@@ -1054,7 +1043,7 @@ video::-webkit-media-controls-enclosure {
         right: 0 !important;
         transform: none !important;
         width: 100% !important;
-        max-width: 360px !important; /* Slightly smaller to leave more room for text below */
+        max-width: 500px !important; /* Slightly smaller to leave more room for text below */
         margin: 0 auto !important; /* Centers it horizontally */
     }
 
