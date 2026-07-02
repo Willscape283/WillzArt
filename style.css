@@ -1051,6 +1051,7 @@ video::-webkit-media-controls-enclosure {
     right: auto !important;
     left: auto !important;
     transform: none !important;
+   margin-top: 10px !important; /* Move image upward */
 }
     
 }
