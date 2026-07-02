@@ -1026,34 +1026,16 @@ video::-webkit-media-controls-enclosure {
 
 
 @media (max-width: 768px) {
-    /* =======================
-       HOME SECTION MOBILE
-       ======================= */
-    #home {
-        display: flex !important;
-        flex-direction: column !important; /* Changed from column-reverse to put image on top */
-        justify-content: flex-start !important; /* Starts content immediately from the top */
-        gap: 30px !important; /* Tightens up the empty gap space */
-        padding-top: 100px !important; /* Reduces top padding so image sits high up near the header */
-    }
-
     .home-image {
-        position: relative !important;
-        top: 0 !important;
+        position: relative !important; 
         right: 0 !important;
-        transform: none !important;
-        width: 100% !important;
-        max-width: 500px !important; /* Slightly smaller to leave more room for text below */
-        margin: 0 auto !important; /* Centers it horizontally */
-    }
-
-    .section-content.home {
-        transform: none !important;
-        margin-top: 10px !important; /* Moves the text up right underneath the image */
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        transform: none !important; 
+        
+      
+        width: 100% !important; 
+        max-width: 280px !important; 
+        height: auto !important; 
+        margin: 0 auto !important; 
     }
     
 }
